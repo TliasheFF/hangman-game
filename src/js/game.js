@@ -52,6 +52,11 @@ const checkLetter = (letter) => {
         triesLeft -= 1;
         triesCounter.innerText = triesLeft;
 
+        if (triesLeft <= 5) {
+            triesCounter.classList.remove('text-lime-900');
+            triesCounter.classList.add('text-red-600');
+        }
+
         const hangmanImg = document.getElementById('hangman-img');
         hangmanImg.src = `images/hg-${10 - triesLeft}.png`;
 
@@ -69,6 +74,9 @@ const checkLetter = (letter) => {
                 }
                 document.getElementById(`letter_${i}`).innerText =
                     inputLetter.toUpperCase();
+                document
+                    .getElementById(`${inputLetter.toUpperCase()}`)
+                    .classList.add('button-success');
             }
         });
     }
@@ -96,7 +104,7 @@ const stopGame = (status) => {
 
     document.getElementById(
         'game'
-    ).innerHTML += `<p>The word was: <span class="result-word">${word}</span></p><button id="play-again" class="button-primary px-5 py-2 mt-5">Play again</button>`;
+    ).innerHTML += `<p class="py-5">The word was: <span class="result-word">${word}</span></p><button id="play-again" class="button-primary px-5 py-2 mt-5">Play again</button>`;
     document.getElementById('play-again').onclick = returnHomePage;
 };
 
@@ -111,7 +119,7 @@ export const startGame = () => {
 
     gameDiv.innerHTML = createPlaceholdersHTML();
 
-    gameDiv.innerHTML += `<p id="tries" class="mt-10">TRIES LEFT: <span id="tries-lest" class="font-medium text-red-600">10</span></p>`;
+    gameDiv.innerHTML += `<p id="tries" class="mt-10">TRIES LEFT: <span id="tries-lest" class="font-medium text-lg text-lime-900">10</span></p>`;
 
     const keyboardDIV = createKeyboard();
     keyboardDIV.addEventListener('click', (event) => {

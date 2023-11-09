@@ -48,6 +48,10 @@
         @apply border border-black rounded-md hover:bg-slate-100 dark:border-white dark:hover:bg-zinc-600
     }
 
+    .button-success {
+        @apply bg-lime-600 dark:bg-lime-600
+    }
+
     .placeholfers-wrapper {
         @apply flex flex-row
     }
