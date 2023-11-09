@@ -44,7 +44,7 @@ const createKeyboard = () => {
 };
 
 const checkLetter = (letter) => {
-    const word = sessionStorage.getItem('word');
+    const word = sessionStorage.getItem('word').toLowerCase();
     const inputLetter = letter.toLowerCase();
 
     if (!word.includes(inputLetter)) {
@@ -111,8 +111,7 @@ export const startGame = () => {
 
     gameDiv.innerHTML = createPlaceholdersHTML();
 
-    gameDiv.innerHTML +=
-        '<p id="tries" class="mt-10">TRIES LEFT: <span id="tries-lest" class="font-medium text-red-600">10</span></p>';
+    gameDiv.innerHTML += `<p id="tries" class="mt-10">TRIES LEFT: <span id="tries-lest" class="font-medium text-red-600">10</span></p>`;
 
     const keyboardDIV = createKeyboard();
     keyboardDIV.addEventListener('click', (event) => {
