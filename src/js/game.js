@@ -105,6 +105,11 @@ const stopGame = (status) => {
     document.getElementById(
         'game'
     ).innerHTML += `<p class="py-5">The word was: <span class="result-word">${word}</span></p><button id="play-again" class="button-primary px-5 py-2 mt-5">Play again</button>`;
+
+    document.getElementById(
+        'game'
+    ).innerHTML += `<div class="autor"><p>autor: <span class="autorName">Firdaves Tliashev</span></p> <p>my github: <a href="https://github.com/TliasheFF" class="linkToGit">https://github.com/TliasheFF</a></p></div>`;
+
     document.getElementById('play-again').onclick = returnHomePage;
 };
 

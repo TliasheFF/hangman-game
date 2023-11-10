@@ -95,4 +95,16 @@
     .result-word {
         @apply font-medium uppercase
     }
+
+    .autor {
+        @apply absolute flex-col left-5 bottom-5
+    }
+
+    .autorName {
+        @apply text-slate-400 dark:text-zinc-400
+    }
+
+    .linkToGit {
+        @apply text-slate-400 dark:text-zinc-400 hover:text-sky-800 dark:hover:text-sky-700
+    }
 }
