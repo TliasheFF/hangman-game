@@ -108,7 +108,7 @@ const stopGame = (status) => {
 
     document.getElementById(
         'game'
-    ).innerHTML += `<div class="autor"><p>autor: <span class="autorName">Firdaves Tliashev</span></p> <p>my github: <a href="https://github.com/TliasheFF" class="linkToGit">https://github.com/TliasheFF</a></p></div>`;
+    ).innerHTML += `<div class="autor"><p>autor: <span class="autorName">Firdaves Tliashev</span></p> <p>my github: <a class="linkToGit" href="https://github.com/TliasheFF" target="_black">https://github.com/TliasheFF</a></p></div>`;
 
     document.getElementById('play-again').onclick = returnHomePage;
 };
